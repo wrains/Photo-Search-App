@@ -17,11 +17,11 @@
                     //     //rendering to the page
                     //     console.log(apiResp.picture,'logging api text');
                     // });
-                    var container = document.querySelector('#photo-div');
-                    var pictureDiv;
-                    pictureDiv.innerHTML = `<p>${apiResp}</p>`;
-                    container.appendChild('pictureDiv');
-                    console.log(apiResp.picture,'logging api text');
+                    // var container = document.querySelector('#photo-div');
+                    // var pictureDiv;
+                    // pictureDiv.innerHTML = `<p>${apiResp}</p>`;
+                    // container.appendChild('pictureDiv');
+                    console.log(apiResp.photos,'logging api text');
 
                 }
             };
@@ -38,7 +38,9 @@
 
 
             xhttp.open("GET", `https://api.pexels.com/v1/search?query=${textValue}`, true, Headers);
-            xhttp.setRequestHeader('Authorization', 'Bearer ' + '563492ad6f91700001000001549a9a446afa4058918b4ab9d5b0fe6e');
+            // xhttp.setRequestHeader('Authorization', 'Bearer ' + '563492ad6f91700001000001549a9a446afa4058918b4ab9d5b0fe6e');
+            xhttp.setRequestHeader('Authorization', '563492ad6f91700001000001549a9a446afa4058918b4ab9d5b0fe6e');
+            // xhttp.setRequestHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:5500/');
             xhttp.send();
 
 
