@@ -35,11 +35,17 @@ header {
 
 #photo-div {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-around;
+    height: 1800vh;
+    margin: 10px;
+}
+
+#photo-div>section {
+    margin: 10px;
+    max-width: 30%;
 }
 
 .thumbnail-pics {
-    width: 300px;
-    height: auto;
+    max-width: 100%;
 }
