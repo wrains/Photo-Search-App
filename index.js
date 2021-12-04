@@ -23,8 +23,13 @@ var searchForm = document.querySelector('#search-form');
                 var pictureData = apiResp.photos.map(function (item) {
                     return item.src;
                 });
+                var outerContainer = document.querySelector('#container');
                 var container = document.querySelector('#photo-div');
                 container.innerHTML = '';
+                // outerContainer.innerHTML = '';
+                var searchTitle = document.querySelector('#search-title');
+                var searchText = document.querySelector('#search-bar').value;
+                searchTitle.innerHTML = `${searchText.charAt(0).toUpperCase()+searchText.slice(1)} Photos`;
                 pictureData.forEach(function(photo){
                     var pictureDiv = document.createElement('section');
                     pictureDiv.innerHTML = `<img class='thumbnail-pics' src='${photo.large}'>`;

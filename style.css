@@ -33,11 +33,15 @@ header {
     border: .5px solid black;
 }
 
+#search-title {
+    text-align: center;
+}
+
 #photo-div {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 1800vh;
+    height: 1500vh;
     margin: 10px;
 }
 
@@ -48,4 +52,5 @@ header {
 
 .thumbnail-pics {
     max-width: 100%;
+    border-radius: 1px;
 }
