@@ -2,6 +2,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #1a1a1a;
 }
 
 html,
@@ -12,14 +13,20 @@ body {
 header {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-
+    align-items: center;
 }
+
+header>h1 {
+    margin-top: 10px;
+}
+
 
 #search-form {
     display: flex;
     justify-content: center;
-    width: 33%;
+    width: 50%;
 }
 
 #search-bar {
@@ -39,18 +46,22 @@ header {
 
 #photo-div {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    height: 1500vh;
-    margin: 10px;
+    margin: auto;
+    width: 90%;
+    justify-content: space-around;
 }
 
 #photo-div>section {
+    display: flex;
     margin: 10px;
     max-width: 30%;
+    align-items: center;
 }
 
 .thumbnail-pics {
+    margin: auto;
     max-width: 100%;
-    border-radius: 1px;
+    border-radius: 2px;
 }

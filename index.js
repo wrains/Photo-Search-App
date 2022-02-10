@@ -1,5 +1,8 @@
+//create search form variable for use in code
 var searchForm = document.querySelector('#search-form');
+    //add event listener to when submitted
     searchForm.addEventListener('submit', function (e) {
+
         e.preventDefault();
 
         //AJAX request - with the API key from Pexels
@@ -19,10 +22,15 @@ var searchForm = document.querySelector('#search-form');
                 // pictureDiv.innerHTML = `<p>${apiResp}</p>`;
                 // container.appendChild('pictureDiv');
 
+
+
                 console.log(apiResp.photos,'logging api text');
+
+
                 var pictureData = apiResp.photos.map(function (item) {
                     return item.src;
                 });
+                console.log('pictureData Log',pictureData);
                 var outerContainer = document.querySelector('#container');
                 var container = document.querySelector('#photo-div');
                 container.innerHTML = '';
@@ -30,11 +38,31 @@ var searchForm = document.querySelector('#search-form');
                 var searchTitle = document.querySelector('#search-title');
                 var searchText = document.querySelector('#search-bar').value;
                 searchTitle.innerHTML = `${searchText.charAt(0).toUpperCase()+searchText.slice(1)} Photos`;
+                let pageLen = 0;
+                let ind = 0;
                 pictureData.forEach(function(photo){
                     var pictureDiv = document.createElement('section');
                     pictureDiv.innerHTML = `<img class='thumbnail-pics' src='${photo.large}'>`;
                     container.appendChild(pictureDiv);
+
+
+                    // this line below isn't working 28 December
+                    // console.log('picDiv.height print',document.querySelectorAll('.thumbnail-pics')[ind]);
+                    // pageLen += pictureDiv.height;
+                    // console.log('pagelen print',pageLen);
+
                 });
+
+                // document.querySelectorAll('.thumbnail-pics').forEach(function(photo) {
+                //     console.log('photo test',photo);
+
+                //     console.log('page length test',pageLen);
+
+                // });
+                // console.log('page length test',pageLen);
+
+                // Set size of page to 1/3 + 50px of total image length
+                // document.querySelector('#photo-div').style.height = `${pageLen/3+50}px`;
 
 
             }
@@ -57,7 +85,6 @@ var searchForm = document.querySelector('#search-form');
         // xhttp.setRequestHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:5500/');
 
         xhttp.send();
-
 
     });
 
